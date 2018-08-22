@@ -18,7 +18,7 @@ def train(env_id, num_timesteps, seed, num_options,app, saves ,wsaves, epoch,dc)
         return mlp_policy.MlpPolicy(name=name, ob_space=ob_space, ac_space=ac_space,
             hid_size=64, num_hid_layers=2, num_options=num_options, dc=dc)
     env = bench.Monitor(env, logger.get_dir() and 
-        osp.join(logger.get_dir(), "monitor.json"))
+        osp.join(logger.get_dir(), "{}-{}-options-".format(num_options,seed)))
     env.seed(seed)
     gym.logger.setLevel(logging.WARN)
 
@@ -26,6 +26,8 @@ def train(env_id, num_timesteps, seed, num_options,app, saves ,wsaves, epoch,dc)
         optimsize=64
     elif num_options ==2:
         optimsize=32
+    elif num_options ==3:
+        optimsize=21
     else:
         print("Only two options or primitive actions is currently supported.")
         sys.exit()
@@ -55,7 +57,7 @@ def main():
 
     args = parser.parse_args()
 
-    train(args.env, num_timesteps=1e6, seed=args.seed, num_options=args.opt, app=args.app, saves=args.saves, wsaves=args.wsaves, epoch=args.epoch,dc=args.dc)
+    train(args.env, num_timesteps=2e6 + 10, seed=args.seed, num_options=args.opt, app=args.app, saves=args.saves, wsaves=args.wsaves, epoch=args.epoch,dc=args.dc)
 
 
 if __name__ == '__main__':

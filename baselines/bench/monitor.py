@@ -8,6 +8,7 @@ import csv
 import os.path as osp
 import json
 import numpy as np
+import pdb
 
 class Monitor(Wrapper):
     EXT = "monitor.csv"
@@ -16,6 +17,7 @@ class Monitor(Wrapper):
     def __init__(self, env, filename, allow_early_resets=False, reset_keywords=(), info_keywords=()):
         Wrapper.__init__(self, env=env)
         self.tstart = time.time()
+        print("Filename {}".format(filename))
         if filename is None:
             self.f = None
             self.logger = None

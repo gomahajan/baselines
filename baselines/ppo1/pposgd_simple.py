@@ -75,7 +75,7 @@ def traj_segment_generator(pi, env, horizon, stochastic, num_options,saves,resul
         acs[i] = ac
         prevacs[i] = prevac
 
-
+        env.render()
         ob, rew, new, _ = env.step(ac)
         rew = rew/10 if num_options > 1 else rew # To stabilize learning.
         rews[i] = rew
@@ -259,8 +259,9 @@ def learn(env, policy_func, *,
         dirname = '{}_{}opts_saves/'.format(gamename,num_options)
         print("Loading weights from iteration: " + str(epoch))
 
-        filename = dirname + '{}_epoch_{}.ckpt'.format(gamename,epoch)
-        #saver.restore(U.get_session(),filename)
+        filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_epoch_{}.ckpt'.format(seed,
+                                                                                                                   iters_so_far)
+        saver.restore(tf.get_default_session(), filename)
     ###    
 
 
@@ -330,10 +331,12 @@ def learn(env, policy_func, *,
 
 
 
-        if iters_so_far % 5 == 0 and wsaves:
+        if timesteps_so_far % 1e6 == 0 and wsaves:
             print("weights are saved...")
-            filename = dirname + '{}_epoch_{}.ckpt'.format(gamename,iters_so_far)
-            #save_path = saver.save(U.get_session(),filename)
+            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_epoch_{}.ckpt'.format(seed,iters_so_far)
+            save_path = saver.save(tf.get_default_session(),filename)
+            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-options.csv".format(seed), opts, delimiter=",")
+            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-observation.csv".format(seed), ob, delimiter=",")
 
 
 
