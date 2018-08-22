@@ -328,20 +328,12 @@ def learn(env, policy_func, *,
         assign_old_eq_new() # set old parameter values to new parameter values
 
 
-
-        if timesteps_so_far > 1e6 == 0 and wsaves:
-            print("final weights are saved...")
-            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_final.ckpt'.format(seed)
-            save_path = saver.save(tf.get_default_session(),filename)
-            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-options.csv".format(seed), opts, delimiter=",")
-            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-observation.csv".format(seed), ob, delimiter=",")
-
-        if iters_so_far % 10 == 0 and wsaves:
+        if iters_so_far % 100 == 0 and wsaves:
             print("temp weights are saved...")
-            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_temp.ckpt'.format(seed)
+            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_temp_{}.ckpt'.format(seed, iters_so_far)
             save_path = saver.save(tf.get_default_session(),filename)
-            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-options.csv".format(seed), opts, delimiter=",")
-            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-observation.csv".format(seed), ob, delimiter=",")
+            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-{}-options.csv".format(seed, iters_so_far), opts, delimiter=",")
+            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-{}-observation.csv".format(seed, iters_so_far), ob, delimiter=",")
 
 
 
