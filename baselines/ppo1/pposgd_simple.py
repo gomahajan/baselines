@@ -75,7 +75,7 @@ def traj_segment_generator(pi, env, horizon, stochastic, num_options,saves,resul
         acs[i] = ac
         prevacs[i] = prevac
 
-        env.render()
+        #env.render()
         ob, rew, new, _ = env.step(ac)
         rew = rew/10 if num_options > 1 else rew # To stabilize learning.
         rews[i] = rew
@@ -234,9 +234,7 @@ def learn(env, policy_func, *,
     U.initialize()
     adam.sync()
 
-
     saver = tf.train.Saver(max_to_keep=10000)
-
 
     ### More book-kepping
     results=[]
@@ -261,7 +259,7 @@ def learn(env, policy_func, *,
 
         filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_epoch_{}.ckpt'.format(seed,
                                                                                                                    iters_so_far)
-        saver.restore(tf.get_default_session(), filename)
+        #saver.restore(tf.get_default_session(), filename)
     ###    
 
 
@@ -331,12 +329,19 @@ def learn(env, policy_func, *,
 
 
 
-        if timesteps_so_far % 1e6 == 0 and wsaves:
-            print("weights are saved...")
-            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_epoch_{}.ckpt'.format(seed,iters_so_far)
+        if timesteps_so_far > 1e6 == 0 and wsaves:
+            print("final weights are saved...")
+            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_final.ckpt'.format(seed)
             save_path = saver.save(tf.get_default_session(),filename)
             np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-options.csv".format(seed), opts, delimiter=",")
             np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-observation.csv".format(seed), ob, delimiter=",")
+
+        if iters_so_far % 10 == 0 and wsaves:
+            print("temp weights are saved...")
+            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_temp.ckpt'.format(seed)
+            save_path = saver.save(tf.get_default_session(),filename)
+            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-options.csv".format(seed), opts, delimiter=",")
+            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-observation.csv".format(seed), ob, delimiter=",")
 
 
 
