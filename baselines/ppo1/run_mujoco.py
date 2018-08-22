@@ -18,7 +18,7 @@ def train(env_id, num_timesteps, seed, num_options,app, saves ,wsaves, epoch,dc)
         return mlp_policy.MlpPolicy(name=name, ob_space=ob_space, ac_space=ac_space,
             hid_size=64, num_hid_layers=2, num_options=num_options, dc=dc)
     env = bench.Monitor(env, logger.get_dir() and 
-        osp.join(logger.get_dir(), "{}-{}-options-".format(num_options,seed)))
+        osp.join(logger.get_dir(), "{}-{}-{}-options-".format(env_id,num_options,seed)))
     env.seed(seed)
     gym.logger.setLevel(logging.WARN)
 

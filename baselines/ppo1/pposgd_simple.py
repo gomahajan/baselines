@@ -328,12 +328,12 @@ def learn(env, policy_func, *,
         assign_old_eq_new() # set old parameter values to new parameter values
 
 
-        if iters_so_far % 100 == 0 and wsaves:
-            print("temp weights are saved...")
-            filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_temp_{}.ckpt'.format(seed, iters_so_far)
-            save_path = saver.save(tf.get_default_session(),filename)
-            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-{}-options.csv".format(seed, iters_so_far), opts, delimiter=",")
-            np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-{}-observation.csv".format(seed, iters_so_far), ob, delimiter=",")
+        #if iters_so_far % 100 == 0 and wsaves:
+        #    print("temp weights are saved...")
+        #    filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_temp_{}.ckpt'.format(seed, iters_so_far)
+        #    save_path = saver.save(tf.get_default_session(),filename)
+        #    np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-{}-options.csv".format(seed, iters_so_far), opts, delimiter=",")
+        #    np.savetxt("/home/gaurav/PycharmProjects/Atari35/baselines/hopper/data/{}-temp-{}-observation.csv".format(seed, iters_so_far), ob, delimiter=",")
 
 
 

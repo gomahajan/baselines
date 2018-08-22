@@ -252,7 +252,7 @@ def get_dir():
     Get directory that log files are being written to.
     will be None if there is no output directory (i.e., if you didn't call start)
     """
-    return "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/"
+    return "/home/gaurav/GitRepo/results/ppoc/data/"
 
 record_tabular = logkv
 dump_tabular = dumpkvs
