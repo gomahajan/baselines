@@ -9,3 +9,33 @@ python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Swimmer-v2 --
 python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Swimmer-v2 --seed 3 --app savename --dc 0.1 &
 python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Swimmer-v2 --seed 4 --app savename --dc 0.1 &
 python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Swimmer-v2 --seed 5 --app savename --dc 0.1 &
+wait
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env HalfCheetah-v2 --seed 1 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env HalfCheetah-v2 --seed 2 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env HalfCheetah-v2 --seed 3 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env HalfCheetah-v2 --seed 4 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env HalfCheetah-v2 --seed 5 --app savename --dc 0.1 &
+wait
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Humanoid-v2 --seed 1 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Humanoid-v2 --seed 2 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Humanoid-v2 --seed 3 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Humanoid-v2 --seed 4 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Humanoid-v2 --seed 5 --app savename --dc 0.1 &
+wait
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedDoublePendulum-v2 --seed 1 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedDoublePendulum-v2 --seed 2 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedDoublePendulum-v2 --seed 3 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedDoublePendulum-v2 --seed 4 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedDoublePendulum-v2 --seed 5 --app savename --dc 0.1 &
+wait
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedPendulum-v2 --seed 1 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedPendulum-v2 --seed 2 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedPendulum-v2 --seed 3 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedPendulum-v2 --seed 4 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env InvertedPendulum-v2 --seed 5 --app savename --dc 0.1 &
+wait
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Walker2d-v2 --seed 1 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Walker2d-v2 --seed 2 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Walker2d-v2 --seed 3 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Walker2d-v2 --seed 4 --app savename --dc 0.1 &
+python baselines/ppo1/run_mujoco.py --saves --wsaves --opt 3 --env Walker2d-v2 --seed 5 --app savename --dc 0.1 &
