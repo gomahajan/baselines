@@ -257,8 +257,7 @@ def learn(env, policy_func, *,
         dirname = '{}_{}opts_saves/'.format(gamename,num_options)
         print("Loading weights from iteration: " + str(epoch))
 
-        filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_epoch_{}.ckpt'.format(seed,
-                                                                                                                   iters_so_far)
+        #filename = "/home/gaurav/PycharmProjects/Atari35/baselines/hopper/parameters/" + '{}_epoch_{}.ckpt'.format(seed,                                                                                                           iters_so_far)
         #saver.restore(tf.get_default_session(), filename)
     ###    
 
