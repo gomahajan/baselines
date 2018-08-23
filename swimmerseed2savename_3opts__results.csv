@@ -1,0 +1,2 @@
+epoch,avg_reward,option 0 dur,option 1 dur,option 2 dur,option 0 std,option 1 std,option 2 std,option 0 term,option 1 term,option 2 term,option 0 adv,option 1 adv,option 2 adv
+1,-0.5939935195820615,768,537,743,1.0,1.0,1.0,0.5071418285369873,0.5051059126853943,0.451847642660141,0.06753802299499512,-0.06360979378223419,0.0013760437723249197
